@@ -1,0 +1,95 @@
+body {
+  padding-top: 50px;
+}
+
+.btn-group-sm {
+  display: block;
+  text-align: right;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+#city-search {
+  border-radius: 10px;
+}
+
+#search-button {
+  border-radius: 10px;
+  margin-right: 10px;
+  padding: 5px;
+  background: rgb(218, 215, 215);
+  border: none;
+}
+
+#current-position {
+  border-radius: 10px;
+  margin-right: 10px;
+  padding: 5px;
+  color: white;
+  background: rgb(78, 77, 77);
+  border: none;
+}
+.city-overview {
+  background: rgb(149, 148, 148, 0.4);
+  padding: 10px;
+  margin: 20px 0 20px;
+}
+.current-temp,
+.precip-wind,
+.day,
+.time,
+.card-body,
+.min-temp,
+.max-temp {
+  color: rgb(78, 77, 77);
+}
+
+.max-temp {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.min-temp {
+  font-weight: light;
+}
+
+.current-temp,
+.time {
+  font-size: 24px;
+}
+
+.day,
+.time {
+  text-align: right;
+}
+
+.favorites {
+  padding-top: 20px;
+}
+.card-title,
+.temp-day,
+.precip-day {
+  text-align: center;
+}
+
+.icon-favorite {
+  font-size: 24px;
+  color: rgb(251, 171, 0);
+}
+
+.icon-day {
+  font-size: 72px;
+}
+
+.icon-weather {
+  text-align: center;
+  font-size: 48px;
+}
+
+.precip-day {
+  color: rgb(74, 154, 181);
+}
