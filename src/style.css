@@ -93,3 +93,9 @@ body {
 .precip-day {
   color: rgb(74, 154, 181);
 }
+
+.author {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 50px;
+}
