@@ -25,6 +25,16 @@ function showTemp(response) {
   currentTemp.innerHTML = `${temp}`;
   let displayedCity = document.querySelector("#displayed-city");
   displayedCity.innerHTML = `${cityName}`;
+  let currentDescription = document.querySelector("#current-description");
+  currentDescription.innerHTML = response.data.weather[0].description;
+  let currentWind = document.querySelector("#current-wind");
+  currentWind.innerHTML = Math.round(response.data.wind.speed);
+  let currentIcon = document.querySelector("#current-icon");
+  currentIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  currentIcon.setAttribute("alt", response.data.weather[0].description);
 }
 
 let form = document.querySelector("#search-form");
@@ -54,7 +64,7 @@ let now = new Date();
 let currentTime = document.querySelector("#currentTime");
 let currentDate = document.querySelector("#currentDate");
 let date = now.getDate();
-let hours = now.getHours();
+let hours = (now.getHours() < 10 ? "0" : "") + now.getHours();
 let minutes = (now.getMinutes() < 10 ? "0" : "") + now.getMinutes();
 let year = now.getFullYear();
 let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];

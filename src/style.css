@@ -40,7 +40,7 @@ body {
   margin: 20px 0 20px;
 }
 .current-temp,
-.precip-wind,
+.current-characteristics,
 .day,
 .time,
 .card-body,
@@ -73,6 +73,17 @@ body {
 #fahrenheit {
   text-decoration: none;
 }
+
+.current-characteristics {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#current-description {
+  text-transform: capitalize;
+}
+
 .day,
 .time {
   text-align: right;
@@ -96,7 +107,7 @@ body {
   color: rgb(251, 171, 0);
 }
 
-.icon-day {
+#current-icon {
   font-size: 72px;
 }
 
