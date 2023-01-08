@@ -22,26 +22,37 @@
     <div class="container">
       <div class="weather-app">
         <div class="search-bar">
-          <form id="search-form">
-            <input
-              type="search"
-              id="city-search"
-              placeholder="Enter city name" />
-            <input type="submit" id="search-button" value="search" />
+          <form id="search-form" class="mb-5">
+            <div class="row">
+              <div class="col-7">
+                <input
+                  type="search"
+                  id="city-search"
+                  placeholder="Enter city name"
+                  class="form-control rounded" />
+              </div>
+              <div class="col-2">
+                <input type="submit" id="search-button" value="search" />
+              </div>
+              <div class="col-2">
+                <button id="current-position">current</button>
+              </div>
+            </div>
           </form>
-          <button id="current-position">current</button>
         </div>
 
         <div class="city-overview">
           <div class="row">
             <div class="col-6 city-name">
               <h1 id="displayed-city"></h1>
-              <i class="fa-solid fa-star icon-favorite"></i>
+
               <div class="row">
                 <div class="col-5 current-temp">
                   <span id="currentTemp"></span>
                   <sup id="units">
-                    °C | <a href="#" id="fahrenheit"> °F</a></sup
+                    <a href="#" id="celsius-link" class="active"> °C</a>
+                    |
+                    <a href="#" id="fahrenheit-link"> °F</a></sup
                   >
                 </div>
                 <div class="col-5">
@@ -59,7 +70,7 @@
           </div>
           <ul class="current-characteristics">
             <li id="current-description"></li>
-            <li>Precipitations: <span id="current-precipitations"></span>%</li>
+            <li>Humidity: <span id="current-humidity"></span>%</li>
             <li>Wind: <span id="current-wind"></span> m/s</li>
           </ul>
 

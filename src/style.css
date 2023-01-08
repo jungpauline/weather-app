@@ -14,21 +14,16 @@ body {
   padding-top: 20px;
 }
 
-#city-search {
-  border-radius: 10px;
-}
-
 #search-button {
   border-radius: 10px;
-  margin-right: 10px;
   padding: 5px;
+  color: rgb(78, 77, 77);
   background: rgb(218, 215, 215);
   border: none;
 }
 
 #current-position {
   border-radius: 10px;
-  margin-right: 10px;
   padding: 5px;
   color: white;
   background: rgb(78, 77, 77);
@@ -69,8 +64,17 @@ body {
 #units {
   font-size: 16px;
 }
+a {
+  text-decoration: none;
+}
+#units .active {
+  color: rgb(78, 77, 77);
+  cursor: default;
+  text-decoration: none;
+}
 
-#fahrenheit {
+#units .active:hover {
+  color: rgb(78, 77, 77);
   text-decoration: none;
 }
 
@@ -100,11 +104,6 @@ body {
 
 .card {
   border: 0;
-}
-
-.icon-favorite {
-  font-size: 24px;
-  color: rgb(251, 171, 0);
 }
 
 #current-icon {

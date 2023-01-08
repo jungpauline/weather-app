@@ -19,7 +19,8 @@ function searchCity(event) {
 //Show temp and city name from searched city
 function showTemp(response) {
   console.log(response.data);
-  let temp = Math.round(response.data.main.temp);
+  celsiusTemp = response.data.main.temp;
+  let temp = Math.round(celsiusTemp);
   let cityName = response.data.name;
   let currentTemp = document.querySelector("#currentTemp");
   currentTemp.innerHTML = `${temp}`;
@@ -35,6 +36,8 @@ function showTemp(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   currentIcon.setAttribute("alt", response.data.weather[0].description);
+  let currentHumidity = document.querySelector("#current-humidity");
+  currentHumidity.innerHTML = response.data.main.humidity;
 }
 
 let form = document.querySelector("#search-form");
@@ -86,3 +89,29 @@ let months = [
 let month = months[now.getMonth()];
 currentDate.innerHTML = `${day} ${date} ${month} ${year}`;
 currentTime.innerHTML = `${hours}:${minutes}`;
+
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  let currentTemp = document.querySelector("#currentTemp");
+  currentTemp.innerHTML = Math.round(fahrenheitTemp);
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+}
+
+let celsiusTemp = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  let currentTemp = document.querySelector("#currentTemp");
+  currentTemp.innerHTML = Math.round(celsiusTemp);
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+}
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemp);
