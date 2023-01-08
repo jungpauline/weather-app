@@ -1,16 +1,17 @@
-body {
-  padding-top: 50px;
+.weather-app {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 30px 0 30px;
+  border: 1px solid rgb(149, 148, 148, 0.4);
 }
-
-.btn-group-sm {
-  display: block;
-  text-align: right;
+body {
+  padding-top: 30px;
 }
 
 .search-bar {
   display: flex;
   justify-content: center;
-  padding-top: 50px;
+  padding-top: 20px;
 }
 
 #city-search {
@@ -57,11 +58,21 @@ body {
   font-weight: light;
 }
 
-.current-temp,
 .time {
   font-size: 24px;
 }
 
+.current-temp {
+  font-size: 36px;
+}
+
+#units {
+  font-size: 16px;
+}
+
+#fahrenheit {
+  text-decoration: none;
+}
 .day,
 .time {
   text-align: right;
@@ -74,6 +85,10 @@ body {
 .temp-day,
 .precip-day {
   text-align: center;
+}
+
+.card {
+  border: 0;
 }
 
 .icon-favorite {
@@ -97,5 +112,6 @@ body {
 .author {
   font-size: 12px;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

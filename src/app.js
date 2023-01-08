@@ -22,7 +22,7 @@ function showTemp(response) {
   let temp = Math.round(response.data.main.temp);
   let cityName = response.data.name;
   let currentTemp = document.querySelector("#currentTemp");
-  currentTemp.innerHTML = `${temp}°C`;
+  currentTemp.innerHTML = `${temp}`;
   let displayedCity = document.querySelector("#displayed-city");
   displayedCity.innerHTML = `${cityName}`;
 }
