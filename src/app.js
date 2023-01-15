@@ -115,3 +115,35 @@ function showCelsiusTemp(event) {
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemp);
+
+// Create a function to display the forecast and loop for the next days
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+            <div class="col-2">
+              <div class="card" style="width: 10rem">
+                <div class="card-body">
+                  <h3 class="card-title">${day}</h3>
+                  <div class="temp-day">
+                    <span class="min-temp">4°C</span>
+                    <span class="max-temp">10°C</span>
+                  </div>
+                </div>
+                <i class="fa-solid fa-cloud-sun icon-weather"></i>
+                <br />
+                <div class="precip-day">12%</div>
+              </div>
+            </div>
+            `;
+  });
+
+  forecastHTML = forecastHTML + `</div`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();
