@@ -12,6 +12,11 @@
       rel="stylesheet"
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet" />
     <script
       src="https://kit.fontawesome.com/db621ff978.js"
       crossorigin="anonymous"></script>
@@ -22,20 +27,25 @@
     <div class="container">
       <div class="weather-app">
         <div class="search-bar">
-          <form id="search-form" class="mb-5">
-            <div class="row">
-              <div class="col-7">
+          <form id="search-form" class="mt-5">
+            <div class="row gx-0">
+              <div class="col">
                 <input
                   type="search"
                   id="city-search"
+                  autocomplete="off"
                   placeholder="Enter city name"
-                  class="form-control rounded" />
+                  class="form-control border-0" />
               </div>
-              <div class="col-2">
-                <input type="submit" id="search-button" value="search" />
+              <div class="col-auto px-2">
+                <button type="submit" id="search-button" aria-label="search">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
               </div>
-              <div class="col-2">
-                <button id="current-position">current</button>
+              <div class="col-auto">
+                <button id="current-position" aria-label="current">
+                  <i class="fa-solid fa-location-dot"></i>
+                </button>
               </div>
             </div>
           </form>
@@ -43,44 +53,29 @@
 
         <div class="city-overview">
           <div class="row">
-            <div class="col-6 city-name">
-              <h1 id="displayed-city"></h1>
-
-              <div class="row">
-                <div class="col-5 current-temp">
-                  <span id="currentTemp"></span>
-                  <sup id="units">
-                    <a href="#" id="celsius-link" class="active"> °C</a>
-                    |
-                    <a href="#" id="fahrenheit-link"> °F</a></sup
-                  >
-                </div>
-                <div class="col-5">
-                  <img src="" alt="" id="current-icon" />
-                </div>
-              </div>
-            </div>
+            <div class="col-6 city-name" id="displayed-city"></div>
             <div class="col-6 day">
-              <h3 id="currentDate"></h3>
-
-              <div class="row">
-                <div class="col time" id="currentTime"></div>
-              </div>
+              <div id="currentDate"></div>
+              <div class="col time" id="currentTime"></div>
             </div>
           </div>
-          <ul class="current-characteristics">
-            <li id="current-description"></li>
-            <li>Humidity: <span id="current-humidity"></span>%</li>
-            <li>Wind: <span id="current-wind"></span> m/s</li>
-          </ul>
+          <div class="d-flex justify-content-left align-items-center">
+            <span class="current-temp">
+              <span id="currentTemp"></span>
+              <span id="units">
+                <a href="#" id="celsius-link" class="active unit"> °C</a>
+                |
+                <a href="#" id="fahrenheit-link" class="unit"> °F</a></span
+              >
+            </span>
 
-          <div class="row favorites">
-            <div class="col-2">&#8592;</div>
-            <div class="col-2"><strong>Vienna</strong></div>
-            <div class="col-2">Berlin</div>
-            <div class="col-2">Paris</div>
-            <div class="col-2">Shanghai</div>
-            <div class="col-2">&#8594;</div>
+            <img src="" alt="" id="current-icon" />
+
+            <ul class="current-characteristics">
+              <li id="current-description"></li>
+              <li>Humidity: <span id="current-humidity"></span>%</li>
+              <li>Wind: <span id="current-wind"></span> m/s</li>
+            </ul>
           </div>
         </div>
         <div class="forecast-days" id="forecast"></div>
