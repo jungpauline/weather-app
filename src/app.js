@@ -4,7 +4,7 @@ function searchCity(event) {
   let searchInput = document.querySelector("#city-search");
 
   if (searchInput.value) {
-    let apiKey = "1b07efd51b1f8a474b481f3435f516eb";
+    let apiKey = "b1a8336ff1e05b64da5625e4158fbea3";
     let city = searchInput.value;
     let unit = "metric";
     let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather?";
@@ -38,6 +38,8 @@ function showTemp(response) {
   currentIcon.setAttribute("alt", response.data.weather[0].description);
   let currentHumidity = document.querySelector("#current-humidity");
   currentHumidity.innerHTML = response.data.main.humidity;
+
+  getForecast(response.data.coord);
 }
 
 let form = document.querySelector("#search-form");
@@ -116,8 +118,17 @@ function showCelsiusTemp(event) {
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemp);
 
+// Function to get the forecast from API
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "b1a8336ff1e05b64da5625e4158fbea3";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 // Create a function to display the forecast and loop for the next days
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Thu", "Fri", "Sat", "Sun"];
@@ -146,4 +157,15 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
-displayForecast();
+function displayDefault() {
+  let apiKey = "b1a8336ff1e05b64da5625e4158fbea3";
+  let defaultCity = "London";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${defaultCity}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemp);
+}
+
+displayDefault();
+
+//If current location upon loading the page is needed, use the following code and remove function displayDefault:
+//showPosition();
+//getPosition(position);
