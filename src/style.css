@@ -38,12 +38,16 @@ body {
 .current-characteristics,
 .day,
 .time,
-.card-body,
+.forecast-day,
 .min-temp,
 .max-temp {
   color: rgb(78, 77, 77);
 }
 
+.forecast-day {
+  font-weight: bold;
+  font-size: 24px;
+}
 .max-temp {
   font-weight: bold;
   font-size: 18px;
@@ -96,11 +100,6 @@ a {
 .favorites {
   padding-top: 20px;
 }
-.card-title,
-.temp-day,
-.precip-day {
-  text-align: center;
-}
 
 .card {
   border: 0;
@@ -110,13 +109,10 @@ a {
   font-size: 72px;
 }
 
-.icon-weather {
-  text-align: center;
-  font-size: 48px;
-}
-
-.precip-day {
-  color: rgb(74, 154, 181);
+#forecast {
+  margin-top: 20px;
+  margin-left: 40px;
+  padding: 10px;
 }
 
 .author {
